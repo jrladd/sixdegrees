@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+main {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  position: fixed;
+  background-color: #FCF5E5;
+  grid-template-columns: [left] 3fr [center] 3fr [right] 2fr;
+  grid-template-rows: [top] 1fr [middle] 3fr [bottom] 1fr;
+  font-family: 'Raleway', sans-serif;
+}
+
+#sigma-container {
+  z-index: -1;
+  grid-column: left / span 3;
+  grid-row: top / span 2;
+}
+
+header {
+  grid-column: left / span 3;
+  grid-row: top;
+  height: fit-content;
+}
+
+#controls {
+  grid-column: left / span 3;
+  grid-row: bottom;
+  margin: 2%;
+  padding: 1%;
+  background-color: #FCF5E5d0;
+  border-radius: 5px;
+}
+
+h1, h2, h3 {
+  width: fit-content;
+  padding: 0 2px;
+  margin: 2px 0;
+  color: white;
+  font-style: italic;
+}
+
+h1 {
+  font-size: x-large;
+}
+h2 {
+  font-size: larger;
+}
+
+#main-heading {
+  background-color: orange;
+}
+
+#subhead1 {
+  background-color: dodgerblue;
+}
+
+#subhead2 {
+  background-color: firebrick;
+}
+
+#search input {
+  border-radius: 15px;
+  font-size: medium;
+  padding: .5% 1%;
+  margin: 2%;
+  width: 95%;
+}
+
+#buttons > button {
+	background: white;
+	outline: none;
+	border: 1px solid dimgrey;
+	border-radius: 2px;
+	cursor: pointer;
+  margin: 2% 0;
+}
+
+#buttons > button > span {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+header {
+  width: fit-content;
+}
+
+.time-slider, .confidence-slider {
+  margin: 2% 0;
+}
+
+.time-slider > input {
+  background: #fff0;
+  pointer-events: none;
+  position: absolute;
+  width: 96%;
+}
+
+.confidence-slider > input#confidence {
+  background: #fff0;
+  pointer-events: none;
+  background-color: dodgerblue;
+  width: 100%;
+}
+
+::-moz-range-thumb {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+::-webkit-slider-thumb {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.time-slider input,
+.time-slider ::-moz-range-progress,
+.confidence-slider input#confidence,
+.confidence-slider ::-moz-range-progress {
+  height: 5px;
+}
+
+.time-slider > input#maxYear,
+.time-slider > input#minYear::-moz-range-progress {
+  background-color: lightgrey;
+}
+
+.time-slider > input#maxYear::-moz-range-progress {
+  background-color: firebrick;
+}
+
+.confidence-slider > input#confidence::-moz-range-track {
+  background-color: dodgerblue;
+}
+
+.confidence-slider > input#confidence::-moz-range-progress {
+  background-color: lightgray;
+}
+
+.time-number {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+input[type=number] {
+  width: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    grid-template-rows: [top] 1fr [middle] 1fr [bottom] 1fr;
+  }
+  
+  #sigma-container {
+    grid-row: top / span 3;
+  }
+  
+  #controls {
+    grid-column: right;
+    grid-row: top;
+  }
+
+  h1 {
+    font-size: xx-large;
+  }
+
+  h2 {
+    font-size: x-large;
+  }
+
+  .time-slider > input {
+    width: 23%;
+  }
+} 

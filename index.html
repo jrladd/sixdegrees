@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Six Degrees of Francis Bacon</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+    <main>
+      <header>
+        <h1 id="main-heading">Six Degrees of Francis Bacon</h1>
+        <h2 id="subhead1"></h2>
+        <h2 id="subhead2">1450-1700</h2>
+      </header>
+      <div id="sigma-container"></div>
+      <div id="controls">
+        <div id="search">
+          <input type="search" id="search-input" list="suggestions" placeholder="Search for a person...">
+          <datalist id="suggestions"></datalist>
+        </div>
+        <div id="buttons">
+          <label for="circular">Layout:</label>
+          <button id="circular">
+            <span><img src="./BiLoaderCircle.svg">Circle Pack</span>
+          </button>
+          <button id="forceatlas2">
+            <span>
+              <img id="forceatlas2-start-label" src="./BiPlay.svg" style="display: flex;">
+              <img id="forceatlas2-stop-label" style="display: none;" src="./BiPause.svg">
+              Force Atlas 2
+            </span>
+          </button>
+        </div>
+        <div class="confidence-slider">
+          <label for="confidence">Confidence:</label><br/>
+          <div id="conf-plot"></div>
+          <input type="range" min="60" max="100" value="60" id="confidence">
+          <input type="number" min="60" max="100" value="60" id="conf-num">
+        </div>
+        <div class="time-slider">
+          <label for="maxYear">Time:</label><br/>
+          <div id="time-plot"></div>
+          <input type="range" min="1450" max="1779" value="1700" id="maxYear">
+          <input type="range" min="1450" max="1779" value="1550" id="minYear">
+        </div>
+        <div class="time-number">
+          <input type="number" min="1450" max="1779" value="1550" id="minYearNum">
+          <input type="number" min="1450" max="1779" value="1700" id="maxYearNum">
+        </div>
+      </div>
+    </main>
+    <script src="graphology.min.js"></script>
+    <script src="graphology-library.min.js"></script>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
