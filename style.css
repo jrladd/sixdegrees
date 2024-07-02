@@ -92,6 +92,99 @@ header {
   margin: 2% 0;
 }
 
+/*
+Implemented browser compatibility slider workaround from here:
+https://www.sitepoint.com/css-custom-range-slider/
+*/
+
+input[type="range"] {
+  --c: dodgerblue; /* active color */
+  --c2: firebrick;
+  --g: 1px; /* the gap */
+  --l: 2px; /* line thickness*/
+  --s: 15px; /* thumb size*/
+
+  width: 400px; /* input width */
+  height: 20px;
+  appearance :none;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+input[type="range" i]#confidence::-webkit-slider-thumb {
+  height: var(--s);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  /* box-shadow: 0 0 0 var(--l) inset var(--c); */
+  background-color: var(--c);
+  /* border-image: linear-gradient(90deg,#ababab 50%,var(--c) 0) 1/0 100vw/0 calc(100vw + var(--g)); */
+  border-image: linear-gradient(90deg,#ababab 50%,var(--c) 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+  appearance: none;
+  pointer-events: all;
+}
+
+input[type="range"]#confidence::-moz-range-thumb { 
+  height: var(--s);
+  width: var(--s);
+  border-radius: 50%;
+  /* box-shadow: 0 0 0 var(--l) inset var(--c); */
+  background-color: var(--c);
+  border-image: linear-gradient(90deg,#ababab 50%,var(--c) 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+  -moz-appearance: none;
+  appearance: none;
+  pointer-events: all;
+}
+
+input[type="range" i]#minYear::-webkit-slider-thumb {
+  height: var(--s);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  /* box-shadow: 0 0 0 var(--l) inset var(--c); */
+  background-color: var(--c2);
+  /* border-image: linear-gradient(90deg,#ababab 50%,var(--c) 0) 1/0 100vw/0 calc(100vw + var(--g)); */
+  border-image: linear-gradient(90deg,#ababab 50%,#fff0 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+  appearance: none;
+  pointer-events: all;
+}
+
+input[type="range"]#minYear::-moz-range-thumb { 
+  height: var(--s);
+  width: var(--s);
+  border-radius: 50%;
+  /* box-shadow: 0 0 0 var(--l) inset var(--c); */
+  background-color: var(--c2);
+  border-image: linear-gradient(90deg,#ababab 50%,#fff0 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+  appearance: none;
+  pointer-events: all;
+}
+
+input[type="range" i]#maxYear::-webkit-slider-thumb {
+  height: var(--s);
+  width: var(--s);
+  /* aspect-ratio: 1; */
+  border-radius: 50%;
+  /* box-shadow: 0 0 0 var(--l) inset var(--c); */
+  background-color: var(--c2);
+  border-image: linear-gradient(90deg,var(--c2) 50%,#ababab 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+  appearance: none;
+  pointer-events: all;
+}
+
+input[type="range"]#maxYear::-moz-range-thumb { 
+  height: var(--s);
+  width: var(--s);
+  border-radius: 50%;
+  /* box-shadow: 0 0 0 var(--l) inset var(--c); */
+  background-color: var(--c2);
+  border-image: linear-gradient(90deg,var(--c2) 50%,#ababab 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+  appearance: none;
+  pointer-events: all;
+}
+
+input#confidence {
+  width: 100%;
+}
 .time-slider > input {
   background: #fff0;
   pointer-events: none;
@@ -99,51 +192,10 @@ header {
   width: 96%;
 }
 
-.confidence-slider > input#confidence {
-  background: #fff0;
-  pointer-events: none;
-  background-color: dodgerblue;
-  width: 100%;
-}
-
-::-moz-range-thumb {
-  cursor: pointer;
-  pointer-events: auto;
-}
-
-::-webkit-slider-thumb {
-  cursor: pointer;
-  pointer-events: auto;
-}
-
-.time-slider input,
-.time-slider ::-moz-range-progress,
-.confidence-slider input#confidence,
-.confidence-slider ::-moz-range-progress {
-  height: 5px;
-}
-
-.time-slider > input#maxYear,
-.time-slider > input#minYear::-moz-range-progress {
-  background-color: lightgrey;
-}
-
-.time-slider > input#maxYear::-moz-range-progress {
-  background-color: firebrick;
-}
-
-.confidence-slider > input#confidence::-moz-range-track {
-  background-color: dodgerblue;
-}
-
-.confidence-slider > input#confidence::-moz-range-progress {
-  background-color: lightgray;
-}
-
 .time-number {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
+  margin-top: 25px;
 }
 
 input[type=number] {
