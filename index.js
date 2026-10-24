@@ -3,9 +3,9 @@
 // import graphology from 'https://esm.run/graphology';
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
-import {Sigma} from "https://esm.run/sigma"
-import { NodeBorderProgram } from "https://esm.run/@sigma/node-border";
-import {animateNodes} from "https://esm.run/sigma/utils"
+import {Sigma} from "https://esm.run/sigma@3"
+import { NodeBorderProgram } from "https://esm.run/@sigma/node-border@3";
+import {animateNodes} from "https://esm.run/sigma@3/utils"
 // import {generate} from "./generate-graph.js"
 
 let start = new Date()
